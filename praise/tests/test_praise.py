@@ -1,5 +1,5 @@
 from unittest import TestCase
-
+from .helper import *
 import praise
 
 
@@ -9,6 +9,7 @@ class TestPraise(TestCase):
         self.assertEqual("", praise.praise(""))
         self.assertEqual("None", praise.praise(None))
         self.assertEqual("foo", praise.praise("foo"))
+        self.assertEqual("${foo}", praise.praise("${foo}"))
 
     def test_word(self):
         self.assertTrue(
@@ -31,3 +32,19 @@ class TestPraise(TestCase):
         self.assertTrue(result[3] in praise.smiley.smiley)
         self.assertTrue(result[4] in praise.verb.created)
         self.assertTrue(result[5] in praise.verb.creating)
+
+    def test_caption_words(self):
+        self.assertTrue(caption_check(praise.praise("${ADJECTIVE}"), praise.adjective.adjective))
+        self.assertTrue(caption_check(praise.praise("${ADVERB}"), praise.adverb.adverb))
+        self.assertTrue(caption_check(praise.praise("${EXCLAMATION}"), praise.exclamation.exclamation))
+        self.assertTrue(caption_check(praise.praise("${SMILEY}"), praise.smiley.smiley))
+        self.assertTrue(caption_check(praise.praise("${CREATED}"), praise.verb.created))
+        self.assertTrue(caption_check(praise.praise("${CREATING}"), praise.verb.creating))
+
+    def test_first_caption_words(self):
+        self.assertTrue(first_letter_caption_check(praise.praise("${Adjective}"), praise.adjective.adjective))
+        self.assertTrue(first_letter_caption_check(praise.praise("${Adverb}"), praise.adverb.adverb))
+        self.assertTrue(first_letter_caption_check(praise.praise("${Exclamation}"), praise.exclamation.exclamation))
+        self.assertTrue(first_letter_caption_check(praise.praise("${Smiley}"), praise.smiley.smiley))
+        self.assertTrue(first_letter_caption_check(praise.praise("${Created}"), praise.verb.created))
+        self.assertTrue(first_letter_caption_check(praise.praise("${Creating}"), praise.verb.creating))

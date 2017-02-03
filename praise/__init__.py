@@ -1,11 +1,10 @@
 import string
-from .words import get_one_word_dict
+from .words import Words
 
 
 def praise(template="You are ${adjective}!"):
     if template == None:
         template = "None"
     template = string.Template(template)
-    words = get_one_word_dict()
-    result = template.substitute(words)
+    result = template.substitute(Words())
     return result
