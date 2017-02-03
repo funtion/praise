@@ -13,4 +13,4 @@ python:
 install:
   - pip install .
 # command to run tests
-script: python -m unittest discover .\praise\tests\ "test_*.py"
+script: python -m unittest discover
