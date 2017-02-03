@@ -11,7 +11,7 @@ setup(
     author='Shufang Xie',
     author_email='xieshufang76@gmail.com',
     url='https://github.com/funtion/praise',
-    download_url='https://github.com/funtion/praise/0.1',
+    download_url='https://github.com/funtion/praise/archive/0.1.tar.gz',
     keywords=['praise', 'logging'],
     classifiers=[],
     test_suite='nose.collector',
