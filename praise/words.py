@@ -1,10 +1,10 @@
 import random
 
-from adjective import adjective
-from adverb import adverb
-from exclamation import exclamation
-from smiley import smiley
-from verb import created, creating
+from .adjective import adjective
+from .adverb import adverb
+from .exclamation import exclamation
+from .smiley import smiley
+from .verb import created, creating
 
 
 def get_one_word_dict():

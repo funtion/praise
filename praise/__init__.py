@@ -1,5 +1,5 @@
 import string
-from words import get_one_word_dict
+from .words import get_one_word_dict
 
 
 def praise(template="You are ${adjective}!"):
