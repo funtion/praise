@@ -3,6 +3,9 @@
 > Praise it
 
 [![Build Status](https://travis-ci.org/funtion/praise.svg?branch=master)](https://travis-ci.org/funtion/praise)
+[![Coverage](https://codecov.io/github/funtion/praise/coverage.svg?branch=master)](https://codecov.io/gh/funtion/praise)
+
+
 
 ## Installation
 
