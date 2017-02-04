@@ -12,5 +12,11 @@ python:
 # command to install dependencies
 install:
   - pip install .
+  - pip install codecov
 # command to run tests
-script: python -m unittest discover
+script: 
+  - coverage run -m unittest discover
+
+# upload coverage
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
